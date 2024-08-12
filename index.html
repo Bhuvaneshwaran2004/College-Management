@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+        .header {
+            width: 100%;
+            padding: 20px 0;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            margin-left: 30px;
+            font-size: 32px;
+            color: #333;
+        }
+        .registration-form {
+            background:whitesmoke;
+            padding: 40px 30px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        .registration-form .form-title {
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            color: #333;
+        }
+        .registration-form .form-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        .registration-form .form-control {
+            height: 45px;
+            border-radius: 25px;
+            background: #f3f3f3;
+            border: 1px solid #ddd;
+            padding-left: 45px;
+            font-size: 16px;
+        }
+        .registration-form .form-control:focus {
+            border-color: #2575fc;
+            box-shadow: none;
+        }
+        .registration-form .form-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 18px;
+        }
+        .registration-form .btn-primary {
+            background: #2575fc;
+            border-color: #2575fc;
+            border-radius: 25px;
+            font-size: 16px;
+            padding: 10px 20px;
+            transition: background 0.3s;
+        }
+        .registration-form .btn-primary:hover {
+            background: #1b5dbd;
+            border-color: #1b5dbd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Student Registration</h1>
+    </div>
+
+    <div class="registration-form">
+        <h2 class="form-title">Register</h2>
+        <form id="studentForm">
+            <div class="form-group">
+                <i class="fas fa-user"></i>
+                <input type="text" class="form-control" id="firstName" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <i class="fas fa-user"></i>
+                <select id="gender" class="form-control"placeholder="gender">
+                    <option value="male">Gender:Male</option>
+                    <option value="female">Gender:Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" class="form-control" id="email" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+                <i class="fas fa-calendar"></i>
+                <input type="date" class="form-control" id="dob" placeholder="Date of Birth">
+            </div>
+            <div class="form-group">
+                <i class="fas fa-phone"></i>
+                <input type="tel" class="form-control" id="phone" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" class="form-control" id="address" placeholder="Address">
+            </div>
+            <div class="form-group">
+                <i class="fas fa-school"></i> <select id="course" class="form-control">
+                    <option value="HTML" >Course:HTML</option>
+                    <option value="CSS">Course:CSS</option>
+                    <option value="JAVASCRIPT" >Course:javascript</option>
+                    <option value="BOOTSTRAP">Course:bootstrap</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+            </div>
+            <button type="button" class="btn btn-primary btn-block" onclick="saveStudent()">Register</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <div class="todo-list">
+        <h2 style="color: white;">Student database</h2>
+        <br>
+        <table id="studentTable">
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>D.O.B</th>
+                <th>Phone No</th>
+                <th>Address</th>
+                <th>Course</th>
+                <th>Action</th>
+            </tr>
+        </table>
+    </div>
+    <br><br><br>
+
+    <script src="script.js"></script>
+</body>
+</html>
